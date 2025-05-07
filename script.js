@@ -38,13 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Ustawienie threshold na 0 oznacza, że callback uruchomi się,
         // gdy nawet 1 piksel elementu wejdzie lub wyjdzie z widoku.
         // Możesz dostosować tę wartość np. na 0.1 (10%) jeśli wolisz.
-        threshold: 0.5,
+        threshold: 0.1,
         // Ustaw ujemny rootMargin. Wartości to top, right, bottom, left.
         // "-50px 0px -50px 0px" zmniejsza obszar obserwacji o 50px od góry i od dołu.
         // Oznacza to, że element musi "wejść" 50px głębiej, żeby zostać zauważonym,
         // i "wyjść" 50px dalej, żeby przestać być zauważonym.
         // Eksperymentuj z wartościami! Możesz zacząć od mniejszych, np. "-20px 0px -20px 0px".
         // rootMargin: '-50px 0px -50px 0px'
+        rootMargin: '-30px 0px -30px 0px'
         // root: null, // Domyślnie viewport
     });
 

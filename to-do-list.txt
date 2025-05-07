@@ -1,0 +1,6 @@
+1. Node.js  - dla formularza kontaktowego
+            - dla Gemini do zapisu ustawień AI
+
+2. Konfiguracja pod smartphony
+
+3. Google Analitics

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Fullstack Developer & DevOps Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#about">O mnie</a></li>
+                <li><a href="#skills">Umiejętności</a></li>
+                <li><a href="#projects">Projekty</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="reveal-on-scroll">
+    <!-- <section id="hero"> -->
+        <div class="hero-content-text">
+            <h1>FULLSTACK DEVELOPER<br>MICROSOFT AZURE<br>JUNIOR AI ENGINEER</h1>
+           
+            <p>Programowanie i administrowanie <br>rozwiązaniami chmurowymi</p>
+            <div class="social-links">
+                <a href="https://github.com/MaciejStrozniak" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/maciejstrozniak/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="hero-content-image">
+            <!-- <img src="https://bairesdev.mo.cloudinary.net/blog/2023/08/How-to-Choose-the-Right-Programming-Language-for-a-New-Project.jpg?tx=w_1920,q_auto" alt="Hero Image"> -->
+            <img src="https://img.freepik.com/premium-photo/green-code-made-programming-dark-background_250994-1555.jpg" alt="Hero Image">
+        </div>
+    </section>
+
+    <section id="about" class="reveal-on-scroll">
+        <div class="about-content-image">
+            <!-- <img src="https://bairesdev.mo.cloudinary.net/blog/2023/08/How-to-Choose-the-Right-Programming-Language-for-a-New-Project.jpg?tx=w_1920,q_auto" alt="Hero Image"> -->
+            <img src="https://img.freepik.com/premium-photo/green-code-made-programming-dark-background_250994-1555.jpg" alt="Hero Image">
+        </div>
+        <div class="about-content">
+            <h2>O mnie</h2>
+            <p>
+                Jestem rozwijającym się programistą fullstack, administaratorem Microsot Azure oraz początkującym inżynierem AI.
+                Moją pasją jest tworzenie wydajnych i skalowalnych rozwiązań, które łączą najnowsze technologie z najlepszymi praktykami programistycznymi.
+            </p>
+        </div>
+        
+    </section>
+
+    <section id="skills" class="reveal-on-scroll">
+        <h2>Umiejętności</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Fullstack Development</h3>
+                <ul>
+                    <li>JavaScript/TypeScript</li>
+                    <li>React/Node.js</li>
+                    <li>Python/Django</li>
+                    <li>SQL/NoSQL</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>DevOps</h3>
+                <ul>
+                    <li>Docker/Kubernetes</li>
+                    <li>CI/CD</li>
+                    <li>AWS/GCP</li>
+                    <li>Terraform</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>AI Engineering</h3>
+                <ul>
+                    <li>Machine Learning</li>
+                    <li>Deep Learning</li>
+                    <li>NLP</li>
+                    <li>TensorFlow/PyTorch</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="reveal-on-scroll">
+        <h2>Kontakt</h2>
+        <form id="contact-form">
+            <div class="form-group">
+                <label for="name">Imię i nazwisko</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Wiadomość</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit">Wyślij</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Portfolio. Strona stworzonia ze wsparciem AI. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

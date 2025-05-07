@@ -1,7 +1,11 @@
 1. Node.js  - dla formularza kontaktowego
             - dla Gemini do zapisu ustawień AI
 
-2. Konfiguracja pod smartphony
+2. Sprawdzić script.js 90 co to tam za animacje niby są
+
+3. Konfiguracja pod smartphony
             - sprawdzić czy opłaca się robić w takim przypadku reload nowej wersji strony
 
-3. Google Analitics
+
+
+4. Google Analitics

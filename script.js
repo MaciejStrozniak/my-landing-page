@@ -87,18 +87,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Add animation to skill cards
+    // // Add animation to skill cards
     const skillCards = document.querySelectorAll('.skill-category');
-    const observerOptions = {
-        threshold: 0.1,
-        // Ustaw ujemny rootMargin. Wartości to top, right, bottom, left.
-        // "-50px 0px -50px 0px" zmniejsza obszar obserwacji o 50px od góry i od dołu.
-        // Oznacza to, że element musi "wejść" 50px głębiej, żeby zostać zauważonym,
-        // i "wyjść" 50px dalej, żeby przestać być zauważonym.
-        // Eksperymentuj z wartościami! Możesz zacząć od mniejszych, np. "-20px 0px -20px 0px".
-        rootMargin: '-50px 0px -50px 0px'
-        // root: null, // Domyślnie viewport
-    };
+    // const observerOptions = {
+    //     threshold: 0.1,
+    //     // Ustaw ujemny rootMargin. Wartości to top, right, bottom, left.
+    //     // "-50px 0px -50px 0px" zmniejsza obszar obserwacji o 50px od góry i od dołu.
+    //     // Oznacza to, że element musi "wejść" 50px głębiej, żeby zostać zauważonym,
+    //     // i "wyjść" 50px dalej, żeby przestać być zauważonym.
+    //     // Eksperymentuj z wartościami! Możesz zacząć od mniejszych, np. "-20px 0px -20px 0px".
+    //     rootMargin: '-50px 0px -50px 0px'
+    //     // root: null, // Domyślnie viewport
+    // };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {

@@ -335,7 +335,6 @@ footer {
     .hero-content-text {
         text-align: center;
         padding-top: 8.5rem;
-
     }
 
     .hero-content-image {
@@ -351,6 +350,11 @@ footer {
 
     .about-content-image {
         display: none;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
     }
 
     .nav-links {

@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Fullstack Developer & DevOps Engineer</title>
+    <title>Maciej Stróżniak - Fullstack Developer & DevOps Engineer</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Portfolio</div>
+            <div class="logo">Maciej Stróżniak</div>
             <ul class="nav-links">
                 <li><a href="#about">O mnie</a></li>
                 <li><a href="#skills">Umiejętności</a></li>
@@ -90,14 +91,18 @@
         <form action="http://localhost:3000/send-email" method="POST" id="contact-form">
             <div class="form-group">
                 <label for="name">Imię i nazwisko</label>
+                <!-- <input type="text" id="name" name="name" required value="Mac"> -->
                 <input type="text" id="name" name="name" required>
+
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
+                <!-- <input type="email" id="email" name="email" required value="maciejstrozniak@gmail.com"> -->
                 <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="message">Wiadomość</label>
+                <!-- <textarea id="message" name="message" required>TEST</textarea> -->
                 <textarea id="message" name="message" required></textarea>
             </div>
                 <button type="submit">Wyślij</button>
@@ -107,7 +112,5 @@
     <footer>
         <p>&copy; 2025 Portfolio. Strona stworzonia ze wsparciem AI. Wszelkie prawa zastrzeżone.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html> 

@@ -1,4 +1,4 @@
-1. Node.js  - dla formularza kontaktowego
+1. Node.js  - dla formularza kontaktowego (versja 0.1 już jest!)
             - dla Gemini do zapisu ustawień AI
 
 2. Sprawdzić script.js 90 co to tam za animacje niby są

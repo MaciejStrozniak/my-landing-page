@@ -323,8 +323,38 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+    .logo {
+        margin-left: 25%;
+    }
+
+    #hero {
+        margin-top: 0.01rem;
+    }
+
+    .hero-content-text {
+        text-align: center;
+        padding-top: 8.5rem;
+
+    }
+
+    .hero-content-image {
+        display: none;
+    }
+
+    .about-content {
+        /* border: 2px red solid; */
+        max-width: 100vw;
+        /* font-size: 1.3rem; */
+        text-align: left;
+    }
+
+    .about-content-image {
+        display: none;
+    }
+
     .nav-links {
-        /* display: none; */
+        display: none;
     }
     
     section {

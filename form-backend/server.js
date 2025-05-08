@@ -1,21 +1,19 @@
 // Załaduj zmienne środowiskowe z pliku .env (tylko jeśli nie jesteśmy na produkcji)
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
-}
-
-// const { error } = require('console'); // <-- USUŃ tę linię!
+  }
+  
+const cors = require("cors");
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000; // użycie portu ze zmiennej środowiskowej lub na sztywno portu 3000
+const port = process.env.PORT || 3000; // Użyj portu ze zmiennej środowiskowej lub 3000
 
-const nodemailer = require('nodemailer');
-const path = require('path'); // moduł do pracy ze ścieżkami plików
+const nodemailer = require('nodemailer'); // Importuj Nodemailera
+const path = require('path'); // Moduł do pracy ze ścieżkami plików (przyda się później)
 
-// --- DODAJ TEN MIDDLEWARE ---
 // Middleware do parsowania danych z formularzy HTML (application/x-www-form-urlencoded)
 // Umożliwia dostęp do danych formularza w req.body
-app.use(express.urlencoded({ extended: false }));
-// -----------------------------
+app.use(express.urlencoded({ extended: true }));
 
 // Middleware do parsowania danych wysyłanych jako JSON
 // Umożliwia dostęp do danych JSON w req.body (jeśli formularz jest wysyłany JSem)
@@ -26,71 +24,71 @@ app.use(express.json());
 // Możesz pominąć ten krok lub dostosować ścieżkę, jeśli Twoje pliki są gdzie indziej
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Skonfiguruj transporter Nodemailera, POBIERAJĄC dane ze ZMIENNYCH ŚRODOWISKOWYCH
-const transporter = nodemailer.createTransport(
-    {
-        host: process.env.EMAIL_HOST,
-        port: parseInt(process.env.EMAIL_PORT),
-        // Pamiętaj o poprawnej logice secure: true dla 465, false dla 587
-        secure: process.env.EMAIL_SECURE === 'true', // <-- UPEWNIJ SIĘ, ŻE JEST === 'true'
-        auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS
-        },
-        tls: { // Dodaj ten obiekt
-            rejectUnauthorized: false // Ustaw na false TYLKO DO TESTÓW/DEBUGOWANIA! Pamiętaj o usunięciu na produkcji!
-        }
-    }
-);
+app.use(cors());
 
-transporter.verify( error => {
-    if (error) {
-        console.error("❌ Błąd weryfikacji transportera Nodemailer:", error);
-    } else { // <--- Dodaj nawias klamrowy tutaj
-        console.log("✅ Transporter Nodemailer gotowy do wysyłki e-maili.");
-    } // <--- Dodaj nawias klamrowy tutaj
+
+// Skonfiguruj transporter Nodemailera, POBIERAJĄC dane ze ZMIENNYCH ŚRODOWISKOWYCH
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    host: process.env.EMAIL_HOST,
+    port: parseInt(process.env.EMAIL_PORT), // Pamiętaj o konwersji portu na liczbę
+    secure: process.env.EMAIL_SECURE === 'true', // Porównaj string 'true'
+    auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+    },
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! DO USUNIĘCIA !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    tls: { // Dodaj ten obiekt
+    rejectUnauthorized: false // Ustaw na false TYLKO DO TESTÓW/DEBUGOWANIA!    
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! DO USUNIĘCIA !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+}
 });
 
-// Endpoint, na który będzie wysyłany formulardz kontaktowy (metodą POST)
-app.post('/send-email', (req, res) => {
-    // Odczytaj dane z ciała żądania (dane z formularza w index.html)
-    // Teraz req.body powinno zawierać dane dzięki express.urlencoded()
-    const{ name, email, message } = req.body;
-
-    // walidacja po stronie serwera
-    if (!name || !email || !message) {
-        console.log("Attempted submission with missing fields:", req.body);
-
-        return res.status(400).json({success: false, message: 'Proszę wypełnić wszystkie pola formularza.'});
+// Opcjonalnie: Weryfikacja połączenia z serwerem SMTP przy starcie aplikacji
+transporter.verify(function(error, success) {
+    if (error) {
+        console.error("❌ Błąd weryfikacji transportera Nodemailer:", error);
+        // W aplikacji produkcyjnej warto tu zablokować serwer lub logować błąd!
+    } else {
+        console.log("✅ Transporter Nodemailer gotowy do wysyłki e-maili.");
     }
+});
 
-    // --- Poprawione użycie szablonów stringów (backticki zamiast pojedynczych cudzysłowów) ---
+// Krok 5: Utworzenie Endpointu do Obsługi Formularza (Metoda POST)
+
+// Endpoint, na który będzie wysyłany formularz kontaktowy
+app.post('/send-email', (req, res) => {
+    // Odczytaj dane z ciała żądania (dane z formularza)
+    const { name, email, message } = req.body;
+
+    // Prosta walidacja po stronie serwera
+  if (!name || !email || !message) {
+      console.log("Attempted submission with missing fields:", req.body);
+      return res.status(400).json({ success: false, message: 'Proszę wypełnić wszystkie pola formularza.' });
+  }
+
+    // Skonfiguruj opcje e-maila do wysłania
     const mailOptions = {
-        from: `"${name}" <${process.env.EMAIL_USER}>`, // Użyj backticków!
-        to: process.env.RECIPIENT_EMAIL,
-        subject: `Wiadomość z formularza kontaktowego od ${name}`, // Użyj backticków!
-        text: `Od ${name}\nEmail: ${email}\n Wiadomość:\n${message}`, // Użyj backticków!
+        from: `"${name}" <${process.env.EMAIL_USER}>`, // Nazwa nadawcy może być imieniem z formularza, adres to email_user z env
+        to: process.env.RECIPIENT_EMAIL, // Twój adres email, na który chcesz dostać wiadomość (z env)
+        subject: `Wiadomość z formularza kontaktowego od ${name}`, // Temat emaila
+        text: `Od: ${name}\nEmail: ${email}\nWiadomość:\n${message}`, // Wersja tekstowa emaila
         html: `<p><strong>Od:</strong> ${name}</p>
-               <p><strong>Email:</strong> ${email}</p>
-               <p><strong>Wiadomość:</strong></p>
-               <p>${message}</p>` // Użyj backticków!
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Wiadomość:</strong></p>
+                <p>${message}</p>` // Wersja HTML emaila
     };
-    // ------------------------------------------------------------------------------------
 
-
-    // wyślij e-mail za pomocą Nodemailera
+    // Wyślij e-mail za pomocą Nodemailera
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.error('❌ Błąd podczas wysyłania e-maila:', error);
-            // odesłanie odpowiedzi do klienta w formacie JSON
-            res.status(500).json({ success:false, message: 'Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później'});
+            // Odeslij do klienta odpowiedz o bledzie w formacie JSON
+            res.status(500).json({ success: false, message: 'Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później.' });
         } else {
             console.log('✅ E-mail wysłany: ' + info.response);
-             // Jeśli używasz ethereal.email, wyświetl link do podglądu
-            if (process.env.EMAIL_HOST === 'smtp.ethereal.email') { // Sprawdź czy to ethereal
-                 console.log('✨ Podgląd wiadomości (ethereal): ' + nodemailer.getTestMessageUrl(info));
-            }
-            res.status(200).json({ success:true, message: 'Wiadomość wysłana pomyślnie!' });
+            // return res.status(200);
+            res.status(200).json({ success: true, message: 'Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.' });        
         }
     });
 });
@@ -101,9 +99,8 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-
 // Uruchomienie serwera
 app.listen(port, () => {
-  console.log(`🚀 Serwer nasłuchuje na porcie ${port}`);
-  console.log(`🌐 Otwórz w przeglądarce: http://localhost:${port}`);
+console.log(`🚀 Serwer nasłuchuje na porcie ${port}`);
+console.log(`🌐 Otwórz w przeglądarce: http://localhost:${port}`);
 });

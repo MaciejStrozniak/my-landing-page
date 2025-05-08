@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 // Here you would typically send the form data to your backend
                 // For now, we'll just show a success message
-                alert('Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.');
+                alert('Wysyłanie wiadomości kontaktowych jest jeszcze w przygotowaniu.');
                 contactForm.reset();
             } catch (error) {
                 console.error('Error submitting form:', error);

@@ -22,7 +22,8 @@ app.use(express.json());
 // Middleware do serwowania statycznych plików (np. Twój plik index.html, style.css, script.js)
 // Zakłada, że Twoje pliki frontendowe są w folderze 'public' w głównym folderze projektu (form-backend)
 // Możesz pominąć ten krok lub dostosować ścieżkę, jeśli Twoje pliki są gdzie indziej
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname)));
 
 app.use(cors());
 
@@ -96,7 +97,7 @@ app.post('/send-email', (req, res) => {
 // Opcjonalna trasa główna - serwuje Twój index.html (jeśli używasz middleware express.static)
 // Jeśli Twoj index.html jest w folderze 'public' w folderze backendu
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Uruchomienie serwera

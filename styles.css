@@ -14,8 +14,7 @@
 .reveal-on-scroll {
     opacity: 0; /* Startowo niewidoczne */
     transform: translateY(50px); /* Startowo przesunięte w dół o 50px */
-    transition: opacity 0.5s ease-out, transform 0.6s ease-out; /* Płynna animacja przez 0.6 sekundy */
-    /* Możesz też użyć translateX(-50px); lub translateX(50px); dla wsuwania z boku */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 /* Stan końcowy - elementy po wsuwaniu (klasa dodana przez JS) */
@@ -25,9 +24,9 @@
 }
 
 /* Dodaj trochę paddingu do sekcji, żeby było widać efekt */
-section {
-    padding: 70px 20px;
-}
+ section {
+    padding: 20px 10px;
+} 
 
 * {
     margin: 0;
@@ -183,7 +182,7 @@ section {
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
-    padding-top: 8rem;
+    padding-top: 10rem;
     min-width: 50%;
     max-width: 100%;
 }
@@ -193,7 +192,8 @@ section {
     display: flex;
     min-width: 50%;
     max-width: 100%;
-    min-height: 90vh;
+    min-height: 80vh;
+    max-height: 90vh;
 }
 
 .hero-content-image img {
@@ -246,6 +246,7 @@ section {
 
     min-width: 100%;
     max-width: 100%;
+    min-height: 110%;
 }
 
 .about-content {
@@ -276,7 +277,7 @@ section {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -375,6 +376,20 @@ footer {
     color: var(--primary-black);
 }
 
+/* LINKOWANIE SEKCJI NA STRONIE*/
+#hero {
+    scroll-margin-top: 250px;
+}
+
+#about,
+#skills,
+#contact,
+#projects {
+    scroll-margin-top: 200px;
+}
+
+/* MEDIA QUERIES */
+
 @media (max-width: 768px) {
 
     nav {
@@ -434,10 +449,27 @@ footer {
     }
     
     section {
-        padding: 3rem 5%;
+        padding: 1rem 5%;
     }
     
     .hero-content-text h1 {
         font-size: 2rem;
+    }
+
+    .skills-grid {
+        gap: 0rem;
+    }
+
+    /* NAV LINKS */
+
+    #hero {
+        scroll-margin-top: 110px;
+    }
+
+    #about,
+    #skills,
+    #contact,
+    #projects {
+        scroll-margin-top: 110px;
     }
 } 

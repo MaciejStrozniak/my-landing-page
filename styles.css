@@ -24,8 +24,13 @@
 }
 
 /* Dodaj trochę paddingu do sekcji, żeby było widać efekt */
+/* section {
+    padding: 70px 20px;
+} */
+
+/* Dodaj trochę paddingu do sekcji, żeby było widać efekt */
  section {
-    padding: 8px 10px;
+    padding: 5px 10px;
 } 
 
 * {

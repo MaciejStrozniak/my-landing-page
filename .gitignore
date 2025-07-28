@@ -1,3 +1,5 @@
+.env
+
 form-backend/
 to-do-list.txt
 nodemailer-app.js

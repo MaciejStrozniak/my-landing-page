@@ -46,25 +46,25 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
     // Contact form handling
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
+    // const contactForm = document.getElementById('contact-form');
+    // if (contactForm) {
+    //     contactForm.addEventListener('submit', async (e) => {
+    //         e.preventDefault();
             
-            const formData = new FormData(contactForm);
-            const formObject = Object.fromEntries(formData.entries());
+    //         const formData = new FormData(contactForm);
+    //         const formObject = Object.fromEntries(formData.entries());
             
-            try {
-                // Here you would typically send the form data to your backend
-                // For now, we'll just show a success message
-                alert('Wysyłanie wiadomości kontaktowych jest jeszcze w przygotowaniu.');
-                contactForm.reset();
-            } catch (error) {
-                console.error('Error submitting form:', error);
-                alert('Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie później.');
-            }
-        });
-    }
+    //         try {
+    //             // Here you would typically send the form data to your backend
+    //             // For now, we'll just show a success message
+    //             alert('Wysyłanie wiadomości kontaktowych jest jeszcze w przygotowaniu.');
+    //             contactForm.reset();
+    //         } catch (error) {
+    //             console.error('Error submitting form:', error);
+    //             alert('Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie później.');
+    //         }
+    //     });
+    // }
 
     // Add scroll-based header styling
     const header = document.querySelector('header');

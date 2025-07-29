@@ -1,5 +1,2 @@
-.env
-
-form-backend/
+contact-form-backend/
 to-do-list.txt
-nodemailer-app.js

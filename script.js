@@ -1,4 +1,59 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Sekcja formularza kontaktowego
+    // zmienne dla pobsługi popupu dla formulara kontaktowego
+    const contactForm = document.getElementById('contact-form');
+    const statusPopup = document.getElementById('status-popup');
+    const popupMessage = document.getElementById('popup-message');
+    const popupCloseBtn = document.getElementById('popup-close-btn');
+    
+    if (popupCloseBtn) {
+        popupCloseBtn.addEventListener('click', () => {
+            statusPopup.style.display = 'none';
+        });
+    }
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            // Ustaw początkowy status i pokaż popup
+            popupMessage.textContent = 'Wysyłanie wiadomości... Proszę czekać.';
+            statusPopup.className = 'info'; // Dodaj klasę 'info'
+            statusPopup.style.display = 'block';
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            const backendUrl = 'http://localhost:3000/send-email'; // LOKALNY URL
+
+            try {
+                const response = await fetch(backendUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, email, message }),
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    statusPopup.className = 'success'; // Zmień klasę na 'success'
+                    popupMessage.textContent = result.message || 'Wiadomość wysłana pomyślnie!';
+                    contactForm.reset();
+                } else {
+                    statusPopup.className = 'error'; // Zmień klasę na 'error'
+                    popupMessage.textContent = result.message || 'Wystąpił błąd podczas wysyłania wiadomości.';
+                }
+            } catch (error) {
+                console.error('Błąd sieci lub serwera:', error);
+                statusPopup.className = 'error'; // Zmień klasę na 'error'
+                popupMessage.textContent = 'Wystąpił błąd połączenia. Spróbuj ponownie.';
+            }
+        });
+    }
+
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -45,27 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-    // Contact form handling
-    // const contactForm = document.getElementById('contact-form');
-    // if (contactForm) {
-    //     contactForm.addEventListener('submit', async (e) => {
-    //         e.preventDefault();
-            
-    //         const formData = new FormData(contactForm);
-    //         const formObject = Object.fromEntries(formData.entries());
-            
-    //         try {
-    //             // Here you would typically send the form data to your backend
-    //             // For now, we'll just show a success message
-    //             alert('Wysyłanie wiadomości kontaktowych jest jeszcze w przygotowaniu.');
-    //             contactForm.reset();
-    //         } catch (error) {
-    //             console.error('Error submitting form:', error);
-    //             alert('Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie później.');
-    //         }
-    //     });
-    // }
-
     // Add scroll-based header styling
     const header = document.querySelector('header');
     window.addEventListener('scroll', () => {
@@ -104,5 +138,4 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
         observer.observe(card);
     });
-}); 
-
+});

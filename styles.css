@@ -393,6 +393,63 @@ footer {
     scroll-margin-top: 200px;
 }
 
+/* --- Style dla Popupu Statusu Formularza --- */
+#status-popup {
+    display: none; /* Domyślnie ukryty */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000; /* Upewnij się, że jest na wierzchu */
+    text-align: center;
+    min-width: 300px;
+    max-width: 90%; /* Ograniczenie szerokości na mniejszych ekranach */
+    font-family: Arial, sans-serif; /* Przykładowa czcionka, dostosuj do swojej strony */
+}
+
+#popup-message {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+#popup-close-btn {
+    margin-top: 15px;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease; /* Płynne przejście koloru */
+}
+
+#popup-close-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Style dla różnych statusów (zmieniane przez JS poprzez dodawanie/usuwanie klas) */
+#status-popup.info {
+    background-color: #e0f7fa; /* Jasnoniebieski dla informacji */
+    color: #006064; /* Ciemnoniebieski tekst */
+}
+
+#status-popup.success {
+    background-color: #e8f5e9; /* Jasnozielony dla sukcesu */
+    color: #2e7d32; /* Ciemnozielony tekst */
+}
+
+#status-popup.error {
+    background-color: #ffebee; /* Jasnoczerwony dla błędu */
+    color: #c62828; /* Ciemnoczerwony tekst */
+}
+
+
 /* MEDIA QUERIES */
 
 @media (max-width: 768px) {

@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
 
-            const backendUrl = 'http://localhost:3000/send-email'; // LOKALNY URL
+            // const backendUrl = 'http://localhost:3000/send-email'; // LOKALNY URL
+            const backendUrl = 'https://contact-form-service-192026358406.europe-central2.run.app/send-email'; // LOKALNY URL
 
             try {
                 const response = await fetch(backendUrl, {

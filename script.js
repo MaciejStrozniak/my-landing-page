@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const popupMessage = document.getElementById('popup-message');
     const popupCloseBtn = document.getElementById('popup-close-btn');
     
-    //git check
-
     if (popupCloseBtn) {
         popupCloseBtn.addEventListener('click', () => {
             statusPopup.style.display = 'none';

@@ -28,9 +28,14 @@ section {
 } 
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html, body {
+	width: 100%;
+	max-width: 100%;
+	overflow-x: hidden;
 }
 
 /* body {
@@ -48,9 +53,11 @@ body {
     line-height: 1.6;
     /* color: var(--text-color); */
     color: var(--white);
-    background-color: #000000;
+    background-image: url('/pics/pexels-marek-piwnicki-3907296-14082663.jpg');
+    background-size: cover;
+    /* background-color: #000000;
     background: #2A7B9B;
-    background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(113, 203, 125, 1) 0%, rgba(180, 114, 208, 1) 0%, rgba(164, 87, 199, 1) 3%, rgba(0, 0, 0, 1) 24%, rgba(0, 0, 0, 1) 77%, rgba(164, 87, 199, 1) 97%, rgba(180, 114, 208, 1) 100%);
+    background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(113, 203, 125, 1) 0%, rgba(180, 114, 208, 1) 0%, rgba(164, 87, 199, 1) 3%, rgba(0, 0, 0, 1) 24%, rgba(0, 0, 0, 1) 77%, rgba(164, 87, 199, 1) 97%, rgba(180, 114, 208, 1) 100%); */
     }
 
 #main {
@@ -78,7 +85,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -100,6 +108,9 @@ nav {
   }
 
   .dropdown-content {
+    /* margin-right: relative;
+    right: 0;
+    max-width: 100%; */
     display: none;
     position: absolute;
     right: 0;
@@ -444,7 +455,7 @@ footer {
 @media (max-width: 768px) {
 
     #main {
-        width: 100vw;
+        width: 100%;
     }
 
     nav {
@@ -488,6 +499,8 @@ footer {
         margin: 0 0.7rem;
         transition: transform 0.3s ease;
         margin-left: 0;
+        padding-left: 0;
+
     }
 
     .dropbtn {
@@ -520,7 +533,7 @@ footer {
     }
 
     .about-content {
-        max-width: 100vw;
+        max-width: 100%;
         text-align: left;
     }
 

@@ -150,7 +150,8 @@ nav {
     display: block;
     color: var(--white);
     font-size: 1.5rem;
-    margin: 0 0.7rem;
+    /* margin: 0 0.3rem;     */
+    padding-left: 13px;
     transition: transform 0.3s ease;
 }
 
@@ -191,15 +192,20 @@ section {
     max-height: 100%;
     padding-left: 2%;
     margin-top: 8rem;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .hero-content-text {
+    /* border: solid red 2px; */
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
-    padding-top: 10rem;
+    text-align: left;
+    /* padding-top: 10rem; */
     min-width: 50%;
     max-width: 100%;
+    height: 100%;
 }
 
 .hero-content-image {
@@ -217,8 +223,12 @@ section {
 }
 
 .hero-content-text h1 {
+    /* border: solid red 2px; */
+
     font-size: 3rem;
-    margin-bottom: 1.2rem;
+    /* font-size: 2rem; */
+    margin-top: 0;
+    /* margin-bottom: 1.2rem; */
 }
 
 #about {
@@ -466,7 +476,7 @@ footer {
         /* border: red solid 2px; */
         display: flex;
         justify-content: flex-start;
-        margin-left: 1.8px;
+        padding-left: 1.8px;
     }
 
     .social-links a {

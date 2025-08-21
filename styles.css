@@ -196,14 +196,18 @@ section {
 }
 
 #hero {
+    /* border: solid red 2px; */
+
     color: var(--white);
     display: flex;
     flex-direction: row;
     min-height: 100%;
     max-height: 100%;
     padding-left: 2%;
-    margin-top: 8rem;
-    justify-content: space-evenly;
+    margin-top: 7rem;
+    /* margin-top: 8rem; */
+    justify-content: center;
+    /* justify-content: space-evenly; */
     align-items: center;
 }
 
@@ -212,6 +216,7 @@ section {
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
+    /* justify-content: center; */
     text-align: left;
     /* padding-top: 10rem; */
     min-width: 50%;
@@ -219,7 +224,46 @@ section {
     height: 100%;
 }
 
+.hero-content-list {
+    /* border: solid red 2px; */
+    text-decoration: none;
+    /* font-size: 1.5rem; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:flex-start;
+    text-align:justify;
+    text-justify: auto;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    min-width: 80%;
+    max-width: 100%;
+    height: 100%;
+}
+
+.hero-content-list ul {
+    /* border: solid red 2px; */
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align:justify;
+    /* padding-top: 10rem; */
+    min-width: 80%;
+    max-width: 100%; 
+    height: 100%;
+}
+
+.hero-content-list li {
+    /* border: solid red 2px; */
+    margin: 0 30px;
+    font-size: 3rem;    
+}
+
 .hero-content-image {
+    /* border: solid red 2px; */
+
     /* background-image: url('/pics/image.png'); */
     display: flex;
     min-width: 50%;
@@ -526,6 +570,21 @@ footer {
     .hero-content-text {
         text-align: center;
         padding-top: 8.5rem;
+    }
+
+    .hero-content-list ul {
+        /* border: solid red 2px; */
+        /* text-decoration: none; */
+        list-style-type:none;
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align:center;
+        /* padding-top: 10rem; */
+        min-width: 80%;
+        max-width: 100%; 
+        height: 100%;
     }
 
     .hero-content-image {

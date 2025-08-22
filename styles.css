@@ -468,7 +468,9 @@ footer {
 }
 
 #footer { 
-    scroll-margin-top: 110px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* LINKOWANIE SEKCJI NA STRONIE */

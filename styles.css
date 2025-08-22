@@ -449,7 +449,7 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: var(--main-purple);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -469,8 +469,8 @@ footer {
 #popup-close-btn {
     margin-top: 15px;
     padding: 8px 15px;
-    background-color: #007bff;
-    color: white;
+    background-color: var(--white);
+    color: var(--body-color);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -479,17 +479,17 @@ footer {
 }
 
 #popup-close-btn:hover {
-    background-color: #0056b3;
+    background-color: var(--secondary-color);
 }
 
 #status-popup.info {
     background-color: #e0f7fa;
-    color: #006064;
+    color: var(--body-color);
 }
 
 #status-popup.success {
-    background-color: #e8f5e9;
-    color: #2e7d32;
+    background-color: var(--main-purple);
+    color: var(--body-color);
 }
 
 #status-popup.error {

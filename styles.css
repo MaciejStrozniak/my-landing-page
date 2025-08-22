@@ -36,6 +36,7 @@ html, body {
 	width: 100%;
 	max-width: 100%;
 	overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -430,14 +431,15 @@ footer {
 
 /* LINKOWANIE SEKCJI NA STRONIE */
 #hero {
-    scroll-margin-top: 250px;
+    scroll-margin-top: 110px;
 }
 
-#about,
-#skills,
-#contact,
-#projects {
-    scroll-margin-top: 200px;
+#about{
+    scroll-margin-top: 150px;
+}
+
+#contact {
+    scroll-margin-top: 150px;
 }
 
 /* Style dla Popupu Statusu Formularza */

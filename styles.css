@@ -36,18 +36,7 @@ html, body {
 	width: 100%;
 	max-width: 100%;
 	overflow-x: hidden;
-    scroll-behavior: auto;
-    overscroll-behavior-y: contain;
 }
-
-/* body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--primary-black);
-    /* background-image: url('/pics/background.png'); 
-    background-size: cover; 
-} */
 
 body {
     /* border: solid 2px red; */
@@ -204,17 +193,15 @@ section {
     color: var(--white);
     display: flex;
     flex-direction: column;
-    /* /* min-height: 100vh -90px; */
-    /* max-height: 100%; */
-    /* height: 100vh; */
-    /* height: -o-calc(100% - 65px); opera */
-    /* min-height: -webkit-calc(100vh - 65px); */
-    min-height: -webkit-calc(100vh - 90px);
+    /* min-height: -webkit-calc(100vh - 90px); */
+    /* min-height: 90vh; */
+    min-height: 100vh;
     /* height: -moz-calc(100% - 65px); firefox */
     padding-left: 2%;
-    /* margin-top: 7rem; */
+    /* margin-top: 90px; */
     /* margin-top: 8rem; */
     justify-content: center;
+    align-items: center;
     /* justify-content: space-evenly; */
     align-items: center;
 }
@@ -321,13 +308,23 @@ section {
 }
 
 #about {
+    /* border: solid red 2px; */
+    min-width: 70%;
+    max-width: 100%;
+    margin: 0;
+    margin-bottom: 100px;
+
     color: var(--white);
     display: flex;
     flex-direction: row;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+    justify-content: center;
+    /* margin-top: 5rem;
+    margin-bottom: 5rem; */
     /* min-height: -webkit-calc(100vh - 65px); */
-    min-height: -webkit-calc(100vh - 90px);
+    /* min-height: -webkit-calc(100vh - 90px); */
+    min-height: 75vh;
+
+    /* padding-bottom: 30px; */
 }
 
 .about-content-image {
@@ -341,8 +338,11 @@ section {
 }
 
 .about-content {
-    max-width: 800px;
-    margin: 0 auto;
+    /* border: solid red 2px; */
+    /* max-width: 800px; */
+    width: 100%;
+    /* margin: 0 auto; */
+    margin: 0;
     text-align: left; 
     font-size: 1.5rem;
     display: flex;
@@ -350,8 +350,10 @@ section {
     justify-content: center;
     padding-left: 8%;
     padding-right: 3%;
-    min-width: 60%;
-    max-width: 60%;
+    padding-top: 65px;
+    min-width: 50%;
+    max-width: 90%;
+    height: 50%;
 }
 
 #skills {
@@ -403,7 +405,8 @@ section {
     color: var(--white);
     /* background: linear-gradient(135deg, var(--matrix-green-background)); */
     margin-top: 2rem;
-    min-height: -webkit-calc(100vh - 70px);
+    /* min-height: -webkit-calc(100vh - 70px); */
+    min-height: 100vh;
 }
 
 form {
@@ -464,7 +467,9 @@ footer {
 
 }
 
-#footer { scroll-margin-top: 110px; }
+#footer { 
+    scroll-margin-top: 110px; 
+}
 
 /* LINKOWANIE SEKCJI NA STRONIE */
 #hero {
@@ -545,6 +550,7 @@ footer {
     nav {
         justify-content: space-evenly;
         height: 90px;
+        align-items: center;
     }
 
     .logo {
@@ -557,16 +563,6 @@ footer {
         margin-right: 2.5rem;
         text-align: center;
     }
-
-    /* .logo {
-        /* border: solid 2px red; 
-        display: flex;
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: var(--white);
-        /* margin-left: 18.5%; 
-        margin-left: 12.5%;
-    } */
 
     .social-links {
         /* border: red solid 2px; */
@@ -602,13 +598,19 @@ footer {
       }
 
     #hero {
-        justify-content: center;
+        /* min-height: -webkit-calc(100vh - 80px); */
+        /* border: solid red 2px; */
+        height: 100vh;
+        justify-content: flex-start;
+        align-items: center;
         padding-left: 0;
         padding-right: 0;
-        margin-top: 0.01rem;
+        /* margin-top: 0.01rem; */
     }
 
     .hero-content-text {
+        /* border: solid red 2px; */
+
         text-align: center;
         padding-top: 8.5rem;
     }
@@ -628,13 +630,31 @@ footer {
         height: 100%;
     }
 
+    .social-links-hero {
+        padding-bottom: 100px;
+    }
+
     .hero-content-image {
         display: none;
     }
 
+    #about {
+        min-height: -webkit-calc(100vh - 90px);
+        /* border: solid red 2px; */
+        max-width: 100%;
+        margin: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
     .about-content {
+        /* border: solid red 2px; */
+        max-height: 60%;
         max-width: 100%;
         text-align: left;
+        font-size: 1.14rem;
+        margin: 0;
+        padding: 0;
     }
 
     .about-content-image {
@@ -660,9 +680,9 @@ footer {
 
     /* NAV LINKS */
 
-    #hero {
+    /* #hero {
         scroll-margin-top: 110px;
-    }
+    } */
 
     #about,
     #skills,

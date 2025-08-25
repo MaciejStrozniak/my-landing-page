@@ -287,7 +287,6 @@ section {
     margin: 0;
     margin-top: 7rem;
     /* margin-bottom: 100px; */
-
     color: var(--white);
     display: flex;
     flex-direction: row;
@@ -310,8 +309,7 @@ section {
     /* border: solid red 2px; */
     width: 100%;
     margin: 0;
-    text-align: left; 
-    font-size: 1.5rem;
+    text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -321,6 +319,15 @@ section {
     min-width: 50%;
     max-width: 90%;
     height: 50%;
+}
+
+.about-content h2 {
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 1.5rem;
+
 }
 
 #skills {
@@ -369,17 +376,33 @@ section {
 
 #contact {
     /* border: solid 2px red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    text-align: left;
     min-height: calc(100vh - 220px) !important;
     font-size: 1.5rem;
     color: var(--white);
-    padding-top: 13rem;
-    margin-bottom: 8rem;
+    /* padding-top: 13rem; */
+    margin-top: 10rem;
+    margin-bottom: 4rem;
+    min-width: 70%;
+    max-width: 100%;
+    /* padding-left: 20%; */
+}
+
+#contact h2 {
+    margin-bottom: 20px;
+    padding-left: 12.5%;
 }
 
 form {
-    max-width: 600px;
+    /* max-width: 600px; */
+    min-width: 60%;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 2rem;
+    /* padding: 2rem; */
 }
 
 .form-group {
@@ -684,7 +707,11 @@ footer {
         padding: 0;
         padding-bottom: 2rem;
         margin: 0;
-        margin-top: 6rem;
+        margin-top: 5rem;
+    }
+
+    #contact h2 {
+        padding-left: 5%;
     }
 
     .skills-grid {

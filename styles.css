@@ -441,15 +441,15 @@ footer {
 
 /* LINKOWANIE SEKCJI NA STRONIE */
 #hero {
-    scroll-margin-top: 110px;
+    scroll-margin-top: 12rem;
 }
 
 #about{
-    scroll-margin-top: 150px;
+    scroll-margin-top: 16rem;
 }
 
 #contact {
-    scroll-margin-top: 150px;
+    scroll-margin-top: 15rem;
 }
 
 /* Style dla Popupu Statusu Formularza */

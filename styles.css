@@ -722,10 +722,12 @@ footer {
 
     /* NAV LINKS */
 
-    #about,
-    #skills,
-    #contact,
-    #projects {
-        scroll-margin-top: 110px;
+    #about {
+        scroll-margin-top: 150px;
+    }
+
+    #contact {
+        scroll-margin-top: 150px;
+
     }
 } 

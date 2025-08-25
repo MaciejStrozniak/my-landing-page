@@ -285,13 +285,15 @@ section {
     min-width: 70%;
     max-width: 100%;
     margin: 0;
-    margin-top: 7rem;
-    /* margin-bottom: 100px; */
+    /* margin-top: 7rem; */
+    margin-top: 4rem;
     color: var(--white);
     display: flex;
     flex-direction: row;
     justify-content: center;
-    min-height: calc(100vh - 360px) !important;
+    align-items: center;
+    /* min-height: calc(100vh - 360px) !important; */
+    min-height: calc(100vh - 500px) !important;
     /* min-height: 75vh; */
 }
 
@@ -315,7 +317,7 @@ section {
     justify-content: center;
     padding-left: 8%;
     padding-right: 3%;
-    padding-top: 65px;
+    /* padding-top: 65px; */
     min-width: 50%;
     max-width: 90%;
     height: 50%;
@@ -323,6 +325,7 @@ section {
 
 .about-content h2 {
     margin-bottom: 20px;
+    font-size: 2rem;
 }
 
 .about-content p {
@@ -384,9 +387,8 @@ section {
     min-height: calc(100vh - 220px) !important;
     font-size: 1.5rem;
     color: var(--white);
-    /* padding-top: 13rem; */
-    margin-top: 10rem;
-    margin-bottom: 4rem;
+    margin-top: 9rem;
+    margin-bottom: 0.3rem;
     min-width: 70%;
     max-width: 100%;
     /* padding-left: 20%; */

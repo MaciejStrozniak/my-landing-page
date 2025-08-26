@@ -650,10 +650,6 @@ footer {
     }
 
     .hero-content-list {
-        padding: 0;
-    }
-
-    .hero-content-list {
         margin: 0;
         padding: 0;
         height: 50%;
@@ -671,6 +667,10 @@ footer {
         max-width: 100%; 
         /* height: 50%; */
         height: 100%;
+    }
+
+    .hero-content-list li {
+        font-size: 3rem;
     }
 
     .social-links-hero {

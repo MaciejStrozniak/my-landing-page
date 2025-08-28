@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', async (event) => {
             event.preventDefault();
 
-            popupMessage.textContent = 'Wysyłanie wiadomości... Proszę czekać.';
+            popupMessage.textContent = 'Sending messages... Please wait.';
             statusPopup.className = 'info';
             statusPopup.style.display = 'block';
 
@@ -37,16 +37,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     statusPopup.className = 'success';
-                    popupMessage.textContent = result.message || 'Wiadomość wysłana pomyślnie!';
+                    popupMessage.textContent = result.message || 'Message sent successfully!';
                     contactForm.reset();
                 } else {
                     statusPopup.className = 'error';
-                    popupMessage.textContent = result.message || 'Wystąpił błąd podczas wysyłania wiadomości.';
+                    popupMessage.textContent = result.message || 'An error occurred while sending the message.';
                 }
             } catch (error) {
-                console.error('Błąd sieci lub serwera:', error);
+                console.error('Network or server error:', error);
                 statusPopup.className = 'error';
-                popupMessage.textContent = 'Wystąpił błąd połączenia. Spróbuj ponownie.';
+                popupMessage.textContent = 'A connection error has occurred. Try again.';
             }
         });
     }
